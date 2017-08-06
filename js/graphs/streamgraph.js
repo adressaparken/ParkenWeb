@@ -47,10 +47,7 @@ $(document).ready(function() {
 
         data.forEach(function(d) {
             d.date = parseDate(d.date);
-            if (d.sensor == "CO2")
-                d.value = +d.value * 10;
-            else
-                d.value = +d.value;
+            d.value = +d.value;
         });
 
         stack = d3.layout.stack()

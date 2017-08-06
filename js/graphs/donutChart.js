@@ -12,7 +12,10 @@ $(document).ready(function() {
 
             CreateDonutChart(dataFiltered);
         },
-        error: function(error) {}
+        error: function(error) {
+            var dataFiltered = [{ "sensor": "TCA", "date": "2017-05-27T23:00:00.000Z", "value": 96.6 }, { "sensor": "MCP", "date": "2017-05-27T23:00:00.000Z", "value": 50 }, { "sensor": "LUM", "date": "2017-05-27T23:00:00.000Z", "value": 103.14 }, { "sensor": "HUMA", "date": "2017-05-27T23:00:00.000Z", "value": 63.72 }];
+            CreateDonutChart(dataFiltered);
+        }
     });
 
     function CreateDonutChart(dataset) {
