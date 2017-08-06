@@ -1,0 +1,237 @@
+<div id="streamgraph"></div>
+<figure class="highlight">
+    <pre>
+        <code class="language-html" data-lang="html">
+            <span class="cp">&lt;!DOCTYPE html&gt;</span>
+            <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;body</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">"https://d3js.org/d3.v3.min.js"</span><span class="nt">&gt;</span><span class="nt">&lt;/script</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"streamgraph"</span><span class="nt">&gt;</span><span class="nt">&lt;/div</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;script</span><span class="nt">&gt;</span>
+                    var data = [{}];
+                    margin = {
+                        top: 20,
+                        right: 20,
+                        bottom: 20,
+                        left: 30
+                    };
+                    width = 550 - margin.left - margin.right;
+                    height = 250 - margin.top - margin.bottom;
+
+                    colorrange = ["#51D0D7", "#31B5BB"];
+
+                    parseDate = d3.time.format("%Y-%m-%d").parse;
+
+                    x = d3.time.scale().range([margin.left, width]);
+
+                    y = d3.scale.linear().range([height, 0]);
+
+                    z = d3.scale.ordinal().range(colorrange);
+
+                    xAxis = d3.svg.axis()
+                        .scale(x)
+                        .orient("bottom")
+                        .ticks(d3.time.days);
+
+                    yAxis = d3.svg.axis().scale(y);
+
+                    nest = d3.nest()
+                        .key(function(d) {
+                            return d.sensor;
+                        });
+
+                    data.forEach(function(d) {
+                        d.date = parseDate(d.date);
+                        d.value = +d.value;
+                    });
+
+                    stack = d3.layout.stack()
+                        .offset("silhouette")
+                        .values(function(d) {
+                            return d.values;
+                        })
+                        .x(function(d) {
+                            return d.date;
+                        })
+                        .y(function(d) {
+                            return d.value;
+                        });
+
+                    layers = stack(nest.entries(data));
+
+                    area = d3.svg.area()
+                        //.interpolate("cardinal")
+                        .interpolate("basis")
+                        .x(function(d) {
+                            return x(d.date);
+                        })
+                        .y0(function(d) {
+                            return y(d.y0);
+                        })
+                        .y1(function(d) {
+                            return y(d.y0 + d.y);
+                        });
+
+                    svg = d3.select("#streamgraph").append("svg")
+                        .attr("width", width + margin.left + margin.right)
+                        .attr("height", height + margin.top + margin.bottom)
+                        .append("g")
+                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                    layers = stack(nest.entries(data));
+
+                    x.domain(d3.extent(data, function(d) {
+                        return d.date;
+                    }));
+                    y.domain([0, d3.max(data, function(d) {
+                        return d.y0 + d.y;
+                    })]);
+
+                    svg.selectAll(".layer")
+                        .data(layers)
+                        .enter().append("path")
+                        .attr("class", "layer")
+                        .attr("d", function(d) {
+                            return area(d.values);
+                        })
+                        .style("fill", function(d, i) {
+                            return z(i);
+                        });
+
+                    svg.selectAll(".layer")
+                        .attr("opacity", 1)
+                        .on("mouseover", function(d, i) {
+                            svg.selectAll(".layer").transition()
+                                .duration(250)
+                                .attr("opacity", function(d, j) {
+                                    return j != i ? 0.6 : 1;
+                                })
+                        });
+                <span class="nt">&lt;/script</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/body</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/html&gt;</span>
+        </code>
+    </pre>
+</figure>
+
+
+
+
+<script>
+    var data;
+    $.ajax({
+        type: 'get',
+        dataType: 'json',
+        url: "http://localhost:10010/sensorDataByDate?start_date=2017-05-07%2015%3A57%3A23&end_date=2017-05-13%2015%3A57%3A23&interval=DAY",
+        success: function(result) {
+            CreateD3StreamGraph(result);
+        },
+        error: function(error) {
+            alert('Parken API not available');
+        }
+    });
+
+    function CreateD3StreamGraph(data) {
+        margin = {
+            top: 20,
+            right: 20,
+            bottom: 20,
+            left: 20
+        };
+
+        width = $(window).width() - margin.left - margin.right;
+        height = 250 - margin.top - margin.bottom;
+
+        colorrange = ["#51D0D7", "#31B5BB"];
+
+        parseDate = d3.time.format("%Y-%m-%dT%H:%M:%S.%LZ").parse;
+
+        x = d3.time.scale().range([margin.left, width]);
+
+        y = d3.scale.linear().range([height, 0]);
+
+        z = d3.scale.ordinal().range(colorrange);
+
+        xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom")
+            .ticks(d3.time.days);
+
+        yAxis = d3.svg.axis().scale(y);
+
+        nest = d3.nest()
+            .key(function(d) {
+                return d.sensor;
+            });
+
+        data.forEach(function(d) {
+            d.date = parseDate(d.date);
+            d.value = +d.value;
+        });
+
+        stack = d3.layout.stack()
+            .offset("silhouette")
+            .values(function(d) {
+                return d.values;
+            })
+            .x(function(d) {
+                return d.date;
+            })
+            .y(function(d) {
+                return d.value;
+            });
+
+        layers = stack(nest.entries(data));
+
+        area = d3.svg.area()
+            .interpolate("basis")
+            .x(function(d) {
+                return x(d.date);
+            })
+            .y0(function(d) {
+                return y(d.y0);
+            })
+            .y1(function(d) {
+                return y(d.y0 + d.y);
+            });
+
+        svg = d3.select("#streamgraph").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        layers = stack(nest.entries(data));
+
+        x.domain(d3.extent(data, function(d) {
+            return d.date;
+        }));
+        y.domain([0, d3.max(data, function(d) {
+            return d.y0 + d.y;
+        })]);
+
+        svg.selectAll(".layer")
+            .data(layers)
+            .enter().append("path")
+            .attr("class", "layer")
+            .attr("d", function(d) {
+                return area(d.values);
+            })
+            .style("fill", function(d, i) {
+                return z(i);
+            });
+
+        svg.selectAll(".layer")
+            .attr("opacity", 1)
+            .on("mouseover", function(d, i) {
+                svg.selectAll(".layer").transition()
+                    .duration(250)
+                    .attr("opacity", function(d, j) {
+                        return j != i ? 0.6 : 1;
+                    })
+            });
+
+    }
+</script>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
