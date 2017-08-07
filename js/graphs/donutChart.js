@@ -128,7 +128,6 @@ $(document).ready(function() {
                     'font-size': '14px'
                 });
         };
-
         setTimeout(restOfTheData, 1000);
     }
 });
