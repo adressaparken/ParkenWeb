@@ -19,13 +19,12 @@ $(document).ready(function() {
     });
 
     function CreateDonutChart(dataset) {
-        debugger;
         var pie = d3.layout.pie()
             .value(function(d) { return d.value })
             .sort(null)
             .padAngle(.03);
 
-        var w = 300,
+        var w = 250,
             h = 300;
 
         var outerRadius = w / 2;

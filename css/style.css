@@ -2416,3 +2416,14 @@ a.btn:focus {
         padding: 250px 0 0;
     }
 }
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.area {
+    fill: steelblue;
+}

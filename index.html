@@ -81,33 +81,45 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row panel-body">
-                        <div class="col-lg-6">
-                            <div class="wow fadeInRight" data-wow-offset="0" data-wow-delay="0.1s">
+                    <div class="row panel-body" style="padding-left:0px;padding-right:0px">
+                        <div class="col-lg-6" style="padding-left:0px">
+                            <div class="col-lg-12" style="padding-left:0px;padding-right:0px">
                                 <div class="col-lg-4">
                                     <svg id="fillgauge1" width="100%" height="100%"></svg>
                                 </div>
                                 <div class="col-lg-4">
                                     <svg id="fillgauge2" width="100%" height="100%"></svg>
                                 </div>
-                                <div class="col-lg-4">
-                                    <svg id="fillgauge3" width="100%" height="100%"></svg>
+                                <div id="areaNoise" class="col-lg-4">
                                 </div>
+                            </div>
+                            <div class="col-lg-12" style="padding-left:0px;padding-right:0px">
                                 <div class="col-lg-4">
                                     <svg id="fillgauge4" width="100%" height="100%"></svg>
                                 </div>
                                 <div class="col-lg-4">
                                     <svg id="fillgauge5" width="100%" height="100%"></svg>
                                 </div>
-                                <div class="col-lg-4">
-                                    <svg id="fillgauge6" width="100%" height="100%"></svg>
+                                <div id="areaLum" class="col-lg-4">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
+                        <div class="col-lg-6" style="padding-left:0px">
+                            <div class="col-lg-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s" style="padding-left:0px">
                                 <div class="widget">
                                     <div id="donutChart" class="chart-container"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 well well-trans" style="padding-left:0px">
+                                <div class="wow fadeInRight animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                                    <ul class="lead-list">
+                                        <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Environmental Sensors</strong><br>Data from reliable sensors</span></li>
+                                        <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Web Standards</strong><br>Simple REST API access</span></li>
+                                        <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Free to Use</strong><br>Open and free data usage</span></li>
+                                    </ul>
+                                    <p class="text-right wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: bounceIn;">
+                                        <a href="#parkenapi" class="btn btn-skin btn-lg">Parken API <i class="fa fa-angle-right"></i></a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -576,6 +588,7 @@
     <script src="js/graphs/streamgraph.js"></script>
     <script src="js/graphs/liquidFillGauge.js"></script>
     <script src="js/graphs/donutChart.js"></script>
+    <script src="js/graphs/areaChart.js"></script>
 </body>
 
 </html>

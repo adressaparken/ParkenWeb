@@ -46,16 +46,6 @@ $(document).ready(function() {
             config2.waveHeight = 0.3;
             config2.waveCount = 1;
 
-            var gauge3 = loadLiquidFillGauge("fillgauge3", co2);
-            var config3 = liquidFillGaugeDefaultSettings();
-            config3.textVertPosition = 0.8;
-            config3.waveAnimateTime = 5000;
-            config3.waveHeight = 0.15;
-            config3.waveAnimate = false;
-            config3.waveOffset = 0.25;
-            config3.valueCountUp = false;
-            config3.displayPercent = false;
-
             var gauge4 = loadLiquidFillGauge("fillgauge4", tca);
             var config4 = liquidFillGaugeDefaultSettings();
             config4.circleThickness = 0.15;
@@ -82,16 +72,6 @@ $(document).ready(function() {
             config5.waveOffset = 0.25;
             config5.valueCountUp = false;
             config5.displayPercent = false;
-
-            var gauge56 = loadLiquidFillGauge("fillgauge6", no2);
-            var config6 = liquidFillGaugeDefaultSettings();
-            config6.textVertPosition = 0.8;
-            config6.waveAnimateTime = 5000;
-            config6.waveHeight = 0.15;
-            config6.waveAnimate = false;
-            config6.waveOffset = 0.25;
-            config6.valueCountUp = false;
-            config6.displayPercent = false;
         },
         error: function(error) {
 
