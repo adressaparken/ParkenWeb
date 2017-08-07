@@ -30,18 +30,6 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
     <div id="wrapper">
         <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-            <div class="top-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-6">
-                            <p class="bold text-left"></p>
-                        </div>
-                        <div class="col-sm-6 col-md-6">
-                            <p class="bold text-right">Call us now +62 008 65 001</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="container navigation">
 
                 <div class="navbar-header page-scroll">
@@ -49,7 +37,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                     <a class="navbar-brand" href="index.html">
-                        <img src="img/logo.png" alt="" width="150" height="40" />
+                        <img src="img/logo.png" alt="" width="168" height="15" style="margin-top: 15px" />
                     </a>
                 </div>
 
@@ -58,69 +46,97 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#intro">Home</a></li>
                         <li><a href="#parkenapi">Parken API</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#testimonial">Contact</a></li>
+                        <li><a href="#footer">About</a></li>
+                        <li><a href="#footer">Contact</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container -->
         </nav>
-        <!-- Section: intro -->
-        <section id="intro" class="intro">
+
+        <section id="intro" class="home-section paddingbot-60 intro">
             <div class="intro-content">
                 <div class="container">
                     <div class="row">
-                        <div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
-                            <div class="chart-wrapper">
-                                <div class="panel-body">
-                                    <div id="streamgraph">
-                                        <!-- chart goes here! -->
+                        <div class="col-lg-12">
+                            <div class="well well-trans">
+                                <div class="wow fadeInRight animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                                    <div class="section-heading text-center">
+                                        <p>
+                                            The new outdoor space in the technology capital of Trondheim is a vibrant laboratory for research and innovation, testing of new solutions, social debate and communication of knowledge related to art and technology.
+                                        </p>
+                                        <p>
+                                            The park should be an open arena for trying new expressions and new, digital forms of narrative. It should be a place to play, explore and learn – and to wonder, experience and relax. All visitors should be surprised and excited, through both experiences
+                                            and participation. The contents and activities will be based on technology, media and art.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row panel-body" style="padding-left:0px;padding-right:0px">
-                        <div class="col-lg-6" style="padding-left:0px">
-                            <div class="col-lg-12" style="padding-left:0px;padding-right:0px">
-                                <div class="col-lg-4">
-                                    <svg id="fillgauge1" width="100%" height="100%"></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: intro -->
+        <section id="dashboard" class="bg-gray paddingbot-20">
+            <div class="container">
+                <div class="row">
+
+                    <div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
+                        <div class="chart-wrapper">
+                            <div class="panel-body">
+                                <div class="section-heading text-center">
+                                    <h2 class="h-bold">Real time data</h2>
+                                    <p>Some description here about the graphics</p>
                                 </div>
-                                <div class="col-lg-4">
-                                    <svg id="fillgauge2" width="100%" height="100%"></svg>
-                                </div>
-                                <div id="areaNoise" class="col-lg-4">
-                                </div>
-                            </div>
-                            <div class="col-lg-12" style="padding-left:0px;padding-right:0px">
-                                <div class="col-lg-4">
-                                    <svg id="fillgauge4" width="100%" height="100%"></svg>
-                                </div>
-                                <div class="col-lg-4">
-                                    <svg id="fillgauge5" width="100%" height="100%"></svg>
-                                </div>
-                                <div id="areaLum" class="col-lg-4">
+                                <div id="streamgraph">
+                                    <!-- chart goes here! -->
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6" style="padding-left:0px">
-                            <div class="col-lg-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s" style="padding-left:0px">
-                                <div class="widget">
-                                    <div id="donutChart" class="chart-container"></div>
-                                </div>
+                    </div>
+                </div>
+                <div class="row panel-body" style="padding-left:0px;padding-right:0px">
+                    <div class="col-lg-6" style="padding-left:0px">
+                        <div class="col-lg-12" style="padding-left:0px;padding-right:0px">
+                            <div class="col-lg-4">
+                                <svg id="fillgauge1" width="100%" height="100%"></svg>
                             </div>
-                            <div class="col-lg-6 well well-trans" style="padding-left:0px">
-                                <div class="wow fadeInRight animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
-                                    <ul class="lead-list">
-                                        <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Environmental Sensors</strong><br>Data from reliable sensors</span></li>
-                                        <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Web Standards</strong><br>Simple REST API access</span></li>
-                                        <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Free to Use</strong><br>Open and free data usage</span></li>
-                                    </ul>
-                                    <p class="text-right wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: bounceIn;">
-                                        <a href="#parkenapi" class="btn btn-skin btn-lg">Parken API <i class="fa fa-angle-right"></i></a>
-                                    </p>
-                                </div>
+                            <div class="col-lg-4">
+                                <svg id="fillgauge2" width="100%" height="100%"></svg>
+                            </div>
+                            <div id="areaNoise" class="col-lg-4">
+                            </div>
+                        </div>
+                        <div class="col-lg-12" style="padding-left:0px;padding-right:0px">
+                            <div class="col-lg-4">
+                                <svg id="fillgauge4" width="100%" height="100%"></svg>
+                            </div>
+                            <div class="col-lg-4">
+                                <svg id="fillgauge5" width="100%" height="100%"></svg>
+                            </div>
+                            <div id="areaLum" class="col-lg-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" style="padding-left:0px">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s" style="padding-left:0px">
+                            <div class="widget">
+                                <div id="donutChart" class="chart-container"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 well well-trans" style="padding-left:0px">
+                            <div class="wow fadeInRight animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                                <ul class="lead-list">
+                                    <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Environmental Sensors</strong><br>Data from reliable sensors</span></li>
+                                    <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Web Standards</strong><br>Simple REST API access</span></li>
+                                    <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Free to Use</strong><br>Open and free data usage</span></li>
+                                </ul>
+                                <p class="text-right wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: bounceIn;">
+                                    <a href="#parkenapi" class="btn btn-skin btn-lg">Parken API <i class="fa fa-angle-right"></i></a>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -137,7 +153,8 @@
                         <div class="wow fadeInDown" data-wow-delay="0.1s">
                             <div class="section-heading text-center">
                                 <h2 class="h-bold">Parken API</h2>
-                                <p>Ea melius ceteros oportere quo, pri habeo viderer facilisi ei</p>
+                                <p>All the data captured in the park is open source and freely available for use using the offered API</p>
+                                <p>Find how below</p>
                             </div>
                         </div>
                         <div class="divider-short"></div>
@@ -221,140 +238,14 @@
             </div>
 
         </section>
-        <!-- /Section: team -->
 
-        <section id="about" class="home-section paddingtop-40">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="callaction bg-gray">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <div class="wow fadeInUp" data-wow-delay="0.1s">
-                                        <div class="cta-text">
-                                            <h3>In an emergency? Need help now?</h3>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit uisque interdum ante eget faucibus. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="wow lightSpeedIn" data-wow-delay="0.1s">
-                                        <div class="cta-btn">
-                                            <a href="#" class="btn btn-skin btn-lg">Book an appoinment</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Section: services -->
-        <section id="services" class="home-section nopadding paddingtop-60">
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-sm-6 col-md-6">
-                        <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <img src="img/dummy/img-1.jpg" class="img-responsive" alt="" />
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-md-3">
-
-                        <div class="wow fadeInRight" data-wow-delay="0.1s">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <span class="fa fa-stethoscope fa-3x"></span>
-                                </div>
-                                <div class="service-desc">
-                                    <h5 class="h-light">Medical checkup</h5>
-                                    <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="wow fadeInRight" data-wow-delay="0.2s">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <span class="fa fa-wheelchair fa-3x"></span>
-                                </div>
-                                <div class="service-desc">
-                                    <h5 class="h-light">Nursing Services</h5>
-                                    <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <span class="fa fa-plus-square fa-3x"></span>
-                                </div>
-                                <div class="service-desc">
-                                    <h5 class="h-light">Pharmacy</h5>
-                                    <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="col-sm-3 col-md-3">
-
-                        <div class="wow fadeInRight" data-wow-delay="0.1s">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <span class="fa fa-h-square fa-3x"></span>
-                                </div>
-                                <div class="service-desc">
-                                    <h5 class="h-light">Gyn Care</h5>
-                                    <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="wow fadeInRight" data-wow-delay="0.2s">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <span class="fa fa-filter fa-3x"></span>
-                                </div>
-                                <div class="service-desc">
-                                    <h5 class="h-light">Neurology</h5>
-                                    <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wow fadeInRight" data-wow-delay="0.3s">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <span class="fa fa-user-md fa-3x"></span>
-                                </div>
-                                <div class="service-desc">
-                                    <h5 class="h-light">Sleep Center</h5>
-                                    <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- /Section: services -->
-
-        <!-- Section: works -->
         <section id="facilities" class="home-section paddingbot-60">
             <div class="container marginbot-50">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="wow fadeInDown" data-wow-delay="0.1s">
                             <div class="section-heading text-center">
-                                <h2 class="h-bold">Our facilities</h2>
-                                <p>Ea melius ceteros oportere quo, pri habeo viderer facilisi ei</p>
+                                <h2 class="h-bold">Visit the park</h2>
                             </div>
                         </div>
                         <div class="divider-short"></div>
@@ -391,124 +282,17 @@
                 </div>
             </div>
         </section>
-        <!-- /Section: works -->
-
-
-        <section id="partner" class="home-section paddingbot-60">
-            <div class="container marginbot-50">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="wow lightSpeedIn" data-wow-delay="0.1s">
-                            <div class="section-heading text-center">
-                                <h2 class="h-bold">Our partner</h2>
-                                <p>Take charge of your health today with our specially designed health packages</p>
-                            </div>
-                        </div>
-                        <div class="divider-short"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-3">
-                        <div class="partner">
-                            <a href="#"><img src="img/dummy/partner-1.jpg" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="partner">
-                            <a href="#"><img src="img/dummy/partner-2.jpg" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="partner">
-                            <a href="#"><img src="img/dummy/partner-3.jpg" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="partner">
-                            <a href="#"><img src="img/dummy/partner-4.jpg" alt="" /></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: testimonial -->
-        <section id="testimonial" class="home-section paddingbot-60 parallax" data-stellar-background-ratio="0.5">
-            <div class="carousel-reviews broun-block">
-                <div class="container">
-                    <div class="row">
-                        <div id="carousel-reviews" class="carousel slide" data-ride="carousel">
-
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="block-text rel zmin">
-                                            <a title="" href="#">Senior Sofware Engineer</a>
-                                            <p>I'm a passionated software developer that loves new projects ...</p>
-                                            <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                                        </div>
-                                        <div class="person-text rel text-light">
-                                            <img src="img/testimonials/1.jpg" alt="" class="person img-circle" />
-                                            <a title="" href="#">Pedro</a>
-                                            <span>Belfast, UK</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6 hidden-xs">
-                                        <div class="block-text rel zmin">
-                                            <a title="" href="#">Artist</a>
-                                            <p>Ne eam errem semper. Laudem detracto phaedrum cu vim, pri cu errem fierent fabellas.</p>
-                                            <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                                        </div>
-                                        <div class="person-text rel text-light">
-                                            <img src="img/testimonials/2.jpg" alt="" class="person img-circle" />
-                                            <a title="" href="#">Carlos</a>
-                                            <span>Spot, Norway</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
-                                        <div class="block-text rel zmin">
-                                            <a title="" href="#">Thechical Developer</a>
-                                            <p>Ne eam errem semper. Laudem detracto phaedrum cu vim, pri cu errem fierent fabellas. Quis magna in ius.</p>
-                                            <ins class="ab zmin sprite sprite-i-triangle block"></ins>
-                                        </div>
-                                        <div class="person-text rel text-light">
-                                            <img src="img/testimonials/3.jpg" alt="" class="person img-circle" />
-                                            <a title="" href="#">Dominik</a>
-                                            <span>London, UK</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <footer>
 
-            <div class="container">
+            <div id="footer" class="container">
                 <div class="row">
                     <div class="col-sm-6 col-md-4">
                         <div class="wow fadeInDown" data-wow-delay="0.1s">
                             <div class="widget">
-                                <h5>About Medicio</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, ne nam purto nihil impetus, an facilisi accommodare sea
-                                </p>
-                            </div>
-                        </div>
-                        <div class="wow fadeInDown" data-wow-delay="0.1s">
-                            <div class="widget">
-                                <h5>Information</h5>
+                                <h5>Info</h5>
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Laboratory</a></li>
-                                    <li><a href="#">Medical treatment</a></li>
-                                    <li><a href="#">Terms & conditions</a></li>
+                                    <li>The technological infrastructure of the park is a joint cooperation project between Adresseavisen, Trondheim municipality, and NTNU. The park is a laboratory for researchers and students at NTNU.</li>
                                 </ul>
                             </div>
                         </div>
@@ -516,30 +300,17 @@
                     <div class="col-sm-6 col-md-4">
                         <div class="wow fadeInDown" data-wow-delay="0.1s">
                             <div class="widget">
-                                <h5>Medicio center</h5>
+                                <h5>Contact Us</h5>
                                 <p>
-                                    Nam leo lorem, tincidunt id risus ut, ornare tincidunt naqunc sit amet.
+                                    Tell us about your experiences in the park and send us praise, critisism and suggestions.
                                 </p>
                                 <ul>
                                     <li>
                                         <span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-calendar-o fa-stack-1x fa-inverse"></i>
-								</span> Monday - Saturday, 8am to 10pm
+									      <i class="fa fa-circle fa-stack-2x"></i>
+                                          <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+								        </span> ulrika.wallin@trondheim.kommune.no
                                     </li>
-                                    <li>
-                                        <span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-								</span> +62 0888 904 711
-                                    </li>
-                                    <li>
-                                        <span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
-								</span> hello@medicio.com
-                                    </li>
-
                                 </ul>
                             </div>
                         </div>
@@ -548,20 +319,15 @@
                         <div class="wow fadeInDown" data-wow-delay="0.1s">
                             <div class="widget">
                                 <h5>Our location</h5>
-                                <p>The Suithouse V303, Kuningan City, Jakarta Indonesia 12940</p>
-
+                                <p>Innherredsveien 2A, 7014 Trondheim, Norway</p>
                             </div>
                         </div>
                         <div class="wow fadeInDown" data-wow-delay="0.1s">
                             <div class="widget">
-                                <h5>Follow us</h5>
-                                <ul class="company-social">
-                                    <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="social-google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li class="social-vimeo"><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
-                                    <li class="social-dribble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                </ul>
+                                <h5>Connecting Cities</h5>
+                                <p>
+                                    Adressaparken is part of Connecting Cities.
+                                </p>
                             </div>
                         </div>
                     </div>
