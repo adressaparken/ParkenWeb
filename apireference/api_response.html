@@ -1,88 +1,81 @@
 <div class="row text-center heading">
-	<h3>Response Example</h3>
+    <h3>Response Example</h3>
 </div>
 <div class="row">
-	<div class="col-md-6">
-	
-		<caption class="text-left">Request Response</caption>
-		<pre style="max-height:550px;margin-top: 15px"><p>
+    <div class="col-md-6">
+
+        <caption class="text-left">Request Response</caption>
+        <pre style="max-height:550px;margin-top: 15px"><p>
 [{
-	"id": 3437640,
-	"id_wasp": "BOX_001",
 	"sensor": "CO2",
 	"value": "2.610",
-	"timestamp": "2017-05-28T16:01:27.000Z"
+	"date": "2017-05-28T16:01:27.000Z"
 }, {
-	"id": 3437618,
-	"id_wasp": "BOX_001",
-	"sensor": "CO2",
+	"sensor":"TCA"
 	"value": "2.626",
-	"timestamp": "2017-05-28T15:55:28.000Z"
+	"date": "2017-05-28T15:55:28.000Z"
 }, {
-	"id": 3437586,
-	"id_wasp": "BOX_001",
-	"sensor": "CO2",
-	"value": "2.648",
-	"timestamp": "2017-05-28T15:37:28.000Z"
+	"sensor": "PIR",
+	"value": "1",
+	"date": "2017-05-28T15:37:28.000Z"
 }, {
-	"id": 3437567,
-	"id_wasp": "BOX_001",
-	"sensor": "CO2",
-	"value": "2.603",
-	"timestamp": "2017-05-28T15:31:29.000Z"
+	"sensor": "MCP",
+	"value": "50",
+	"date": "2017-05-28T15:31:29.000Z"
+}, {
+	"sensor": "HUMA",
+	"value": "63.728",
+	"date": "2017-05-28T15:37:28.000Z"
 }]
 			</p>
 				</pre>
-	</div>
-	<div class="col-md-6">
-		<table class="table table-striped custab">
-			<caption class="text-left">Responses Codes</caption>
-			<thead>
-				<tr>
-					<th>Field</th>
-					<th>Description</th>
-				</tr>
-			</thead>
-			<tr>
-				<td>id</td>
-				<td>sensor id</td>
-			</tr>
-			<tr>
-				<td>id_wasp</td>
-				<td>name of the sensor server</td>
-			</tr>
-			<tr>
-				<td>sensor</td>
-				<td>name/type of the sensor</td>
-			</tr>
-			<tr>
-				<td>value</td>
-				<td>value of the sensor</td>
-			</tr>
-			<tr>
-				<td>timestamp</td>
-				<td>time when the sensor data was captured</td>
-			</tr>
-		</table>
-		<table class="table table-striped custab">
-			<caption class="text-left">Responses Codes</caption>
-			<thead>
-				<tr>
-					<th>Code</th>
-					<th>Description</th>
-					<th>Schema</th>
-				</tr>
-			</thead>
-			<tr>
-				<td>200</td>
-				<td>Success</td>
-				<td>GetSensorDataRequest { sensorData: [] }</td>
-			</tr>
-			<tr>
-				<td>default</td>
-				<td>Error</td>
-				<td>ErrorResponse { message: string* }</td>
-			</tr>
-		</table>
-	</div>
+    </div>
+    <div class="col-md-6">
+        <table class="table table-striped custab">
+            <caption class="text-left">Responses Codes</caption>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>sensor</td>
+                <td>name/type of the sensor</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>value of the sensor</td>
+            </tr>
+            <tr>
+                <td>timestamp</td>
+                <td>time when the sensor data was captured</td>
+            </tr>
+        </table>
+        <table class="table table-striped custab">
+            <caption class="text-left">Responses Codes</caption>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Schema</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>200</td>
+                <td>Success</td>
+                <td>GetSensorDataRequest { sensorData: [] }</td>
+            </tr>
+            <tr>
+                <td>400</td>
+                <td>Client error</td>
+                <td>ErrorResponse { message: string* }</td>
+            </tr>
+            <tr>
+                <td>500</td>
+                <td>Server error</td>
+                <td>ErrorResponse { message: string* }</td>
+            </tr>
+        </table>
+    </div>
 </div>
