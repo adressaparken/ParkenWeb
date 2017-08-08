@@ -3,9 +3,10 @@ $(document).ready(function() {
     $.ajax({
         type: 'get',
         dataType: 'json',
-        url: "http://localhost:10010/sensorDataByDate?start_date=2017-05-28%2000:00:00&end_date=2017-05-28%2015:23:59&interval=DAY",
+        //this is API request will return the average value per day of each sensor between the 2 dates
+        url: "http://localhost:10010/sensorDataByDate?start_date=2017-05-28%2000:00:00&end_date=2017-05-28%2015:23:59&interval=DAY", 
         success: function(result) {
-
+            // in the chart we are just showing some of the sensors, so the code bellow will just select the sensors that we want and not all of them
             var dataFiltered = result.filter(function(d) {
                 return d.sensor == "LUM" || d.sensor == "MCP" || d.sensor == "HUMA";
             });
@@ -13,6 +14,7 @@ $(document).ready(function() {
             CreateDonutChart(dataFiltered);
         },
         error: function(error) {
+            //in case of error calling API the chart will be using the bellow jason example that is a sample of the API result
             var dataFiltered = [{ "sensor": "TCA", "date": "2017-05-27T23:00:00.000Z", "value": 96.6 }, { "sensor": "MCP", "date": "2017-05-27T23:00:00.000Z", "value": 50 }, { "sensor": "LUM", "date": "2017-05-27T23:00:00.000Z", "value": 103.14 }, { "sensor": "HUMA", "date": "2017-05-27T23:00:00.000Z", "value": 63.72 }];
             CreateDonutChart(dataFiltered);
         }

@@ -3,10 +3,12 @@ $(document).ready(function() {
     $.ajax({
         type: 'get',
         dataType: 'json',
+        //this is API request will return the average value per day of each sensor between the 2 dates - in this case its the same day so it will just return the everage for each sensor in that day
         url: "http://localhost:10010/sensorDataByDate?start_date=2017-05-28%2000:00:00&end_date=2017-05-28%2015:23:59&interval=DAY",
         success: function(result) {
             var temp, hum, co2, tca, co, no2 = 0;
 
+            //the code bellow will get the average value for that day for each sensor and create a chart for each of them
             result.forEach(function(element) {
                 if (element.sensor == "MCP"){
                      temp = element.value;
@@ -28,6 +30,7 @@ $(document).ready(function() {
             
         },
         error: function(error) {
+            // in case of the API is down it will create the charts with the bellow values
             temLiquidFillGauge(20);
             humLiquidFillGauge(60);
             tcaLiquidFillGauge(89);
