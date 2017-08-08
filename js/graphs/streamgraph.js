@@ -15,12 +15,12 @@ $(document).ready(function() {
     function CreateD3StreamGraph(data) {
         margin = {
             top: 20,
-            right: 135,
+            right: 20,
             bottom: 20,
             left: 0
         };
 
-        width = $(window).width() - margin.left - margin.right;
+        width = $("#divDashboard").width() - margin.left - margin.right;
         height = 250 - margin.top - margin.bottom;
 
         colorrange = ["#51D0D7", "#31B5BB"];

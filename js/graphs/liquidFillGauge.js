@@ -8,76 +8,90 @@ $(document).ready(function() {
             var temp, hum, co2, tca, co, no2 = 0;
 
             result.forEach(function(element) {
-                if (element.sensor == "MCP")
-                    temp = element.value;
-                else if (element.sensor == "HUMA")
+                if (element.sensor == "MCP"){
+                     temp = element.value;
+                     temLiquidFillGauge(temp);
+                }   
+                else if (element.sensor == "HUMA"){
                     hum = element.value;
-                else if (element.sensor == "CO2")
-                    co2 = element.value;
-                else if (element.sensor == "TCA")
+                    humLiquidFillGauge(hum);
+                }
+                else if (element.sensor == "TCA"){
                     tca = element.value;
-                else if (element.sensor == "CO")
+                    tcaLiquidFillGauge(tca);
+                }
+                else if (element.sensor == "CO"){
                     co = element.value;
-                else if (element.sensor == "NO2")
-                    no2 = element.value;
-
+                    coLiquidFillGauge(co);
+                }
             }, this);
-
-            var gauge1 = loadLiquidFillGauge("fillgauge1", temp);
-            var config1 = liquidFillGaugeDefaultSettings();
-            config1.circleColor = "#FF7777";
-            config1.textColor = "#FF4444";
-            config1.waveTextColor = "#FFAAAA";
-            config1.waveColor = "#FFDDDD";
-            config1.circleThickness = 0.2;
-            config1.textVertPosition = 0.2;
-            config1.waveAnimateTime = 1000;
-
-            var gauge2 = loadLiquidFillGauge("fillgauge2", hum);
-            var config2 = liquidFillGaugeDefaultSettings();
-            config2.circleColor = "#D4AB6A";
-            config2.textColor = "#553300";
-            config2.waveTextColor = "#805615";
-            config2.waveColor = "#AA7D39";
-            config2.circleThickness = 0.1;
-            config2.circleFillGap = 0.2;
-            config2.textVertPosition = 0.8;
-            config2.waveAnimateTime = 2000;
-            config2.waveHeight = 0.3;
-            config2.waveCount = 1;
-
-            var gauge4 = loadLiquidFillGauge("fillgauge4", tca);
-            var config4 = liquidFillGaugeDefaultSettings();
-            config4.circleThickness = 0.15;
-            config4.circleColor = "#808015";
-            config4.textColor = "#555500";
-            config4.waveTextColor = "#FFFFAA";
-            config4.waveColor = "#AAAA39";
-            config4.textVertPosition = 0.8;
-            config4.waveAnimateTime = 1000;
-            config4.waveHeight = 0.05;
-            config4.waveAnimate = true;
-            config4.waveRise = false;
-            config4.waveHeightScaling = false;
-            config4.waveOffset = 0.25;
-            config4.textSize = 0.75;
-            config4.waveCount = 3;
-
-            var gauge5 = loadLiquidFillGauge("fillgauge5", co);
-            var config5 = liquidFillGaugeDefaultSettings();
-            config5.textVertPosition = 0.8;
-            config5.waveAnimateTime = 5000;
-            config5.waveHeight = 0.15;
-            config5.waveAnimate = false;
-            config5.waveOffset = 0.25;
-            config5.valueCountUp = false;
-            config5.displayPercent = false;
+            
         },
         error: function(error) {
-
+            temLiquidFillGauge(20);
+            humLiquidFillGauge(60);
+            tcaLiquidFillGauge(89);
+            coLiquidFillGauge(30);
         }
     });
 
+    function temLiquidFillGauge(temp){
+        var gauge1 = loadLiquidFillGauge("fillgauge1", temp);
+        var config1 = liquidFillGaugeDefaultSettings();
+        config1.circleColor = "#FF7777";
+        config1.textColor = "#FF4444";
+        config1.waveTextColor = "#FFAAAA";
+        config1.waveColor = "#FFDDDD";
+        config1.circleThickness = 0.2;
+        config1.textVertPosition = 0.2;
+        config1.waveAnimateTime = 1000;
+    }
+
+    function humLiquidFillGauge(hum){
+        var gauge2 = loadLiquidFillGauge("fillgauge2", hum);
+        var config2 = liquidFillGaugeDefaultSettings();
+        config2.circleColor = "#D4AB6A";
+        config2.textColor = "#553300";
+        config2.waveTextColor = "#805615";
+        config2.waveColor = "#AA7D39";
+        config2.circleThickness = 0.1;
+        config2.circleFillGap = 0.2;
+        config2.textVertPosition = 0.8;
+        config2.waveAnimateTime = 2000;
+        config2.waveHeight = 0.3;
+        config2.waveCount = 1;
+    }
+
+    function coLiquidFillGauge(co){
+        var gauge5 = loadLiquidFillGauge("fillgauge5", co);
+        var config5 = liquidFillGaugeDefaultSettings();
+        config5.textVertPosition = 0.8;
+        config5.waveAnimateTime = 5000;
+        config5.waveHeight = 0.15;
+        config5.waveAnimate = false;
+        config5.waveOffset = 0.25;
+        config5.valueCountUp = false;
+        config5.displayPercent = false;
+    }
+
+    function tcaLiquidFillGauge(tca){
+        var gauge4 = loadLiquidFillGauge("fillgauge4", tca);
+        var config4 = liquidFillGaugeDefaultSettings();
+        config4.circleThickness = 0.15;
+        config4.circleColor = "#808015";
+        config4.textColor = "#555500";
+        config4.waveTextColor = "#FFFFAA";
+        config4.waveColor = "#AAAA39";
+        config4.textVertPosition = 0.8;
+        config4.waveAnimateTime = 1000;
+        config4.waveHeight = 0.05;
+        config4.waveAnimate = true;
+        config4.waveRise = false;
+        config4.waveHeightScaling = false;
+        config4.waveOffset = 0.25;
+        config4.textSize = 0.75;
+        config4.waveCount = 3;
+    }
 });
 
 /*!
