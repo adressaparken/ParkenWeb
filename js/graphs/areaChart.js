@@ -3,7 +3,7 @@ $(document).ready(function() {
     $.ajax({
         type: 'get',
         dataType: 'json',
-        url: "http://localhost:10010/sensorDataList?sensor=NO2&limit=100&offset=0", //this is the API url request to get the last 100 results for NO2 sensor
+        url: "http://62.92.70.116:10010/sensorDataList?sensor=NO2&limit=100&offset=0", //this is the API url request to get the last 100 results for NO2 sensor
         success: function(result) {
             CreateNoiseAreChart(result);
         },
@@ -18,7 +18,7 @@ $(document).ready(function() {
     $.ajax({
         type: 'get',
         dataType: 'json',
-        url: "http://localhost:10010/sensorDataList?sensor=LUM&limit=100&offset=0",//this is the API url request to get the last 100 results for LUM sensor
+        url: "http://62.92.70.116:10010/sensorDataList?sensor=LUM&limit=100&offset=0",//this is the API url request to get the last 100 results for LUM sensor
         success: function(result) {
             CreateLumAreChart(result);
         },

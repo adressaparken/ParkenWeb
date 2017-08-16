@@ -3,7 +3,7 @@ $(document).ready(function() {
         type: 'get',
         dataType: 'json',
         //this API request will return the average value for each sensor for every month between the 2 dates
-        url: "http://localhost:10010/sensorDataByDate?start_date=2016-05-07 15:57:23&end_date=2017-05-13%2015%3A57%3A23&interval=MONTH",
+        url: "http://62.92.70.116:10010/sensorDataByDate?start_date=2016-05-07 15:57:23&end_date=2017-05-13%2015%3A57%3A23&interval=MONTH",
         success: function(result) {
             CreateD3StreamGraph(result);
         },
