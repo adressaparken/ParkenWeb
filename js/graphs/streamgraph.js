@@ -31,7 +31,7 @@ $(document).ready(function() {
 
         x = d3.time.scale().range([margin.left, width]);
 
-        y = d3.scale.linear().range([height, 0]);
+        y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.value; })]).range([height, 0]);      
 
         z = d3.scale.ordinal().range(colorrange);
 
