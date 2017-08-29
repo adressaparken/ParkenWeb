@@ -4,7 +4,7 @@ $(document).ready(function() {
         type: 'get',
         dataType: 'json',
         //this is API request will return the average value per day of each sensor between the 2 dates
-        url: "http://62.92.70.116:10010/sensorDataByDate?start_date=2017-05-28%2000:00:00&end_date=2017-05-28%2015:23:59&interval=DAY", 
+        url: "http://62.92.70.116:10010/sensorDataByDate?start_date=2017-05-28%2000:00:00&end_date=2017-05-28%2015:23:59&interval=DAY",
         success: function(result) {
             // in the chart we are just showing some of the sensors, so the code bellow will just select the sensors that we want and not all of them
             var dataFiltered = result.filter(function(d) {
@@ -32,7 +32,7 @@ $(document).ready(function() {
         var outerRadius = w / 2;
         var innerRadius = 100;
 
-        var color = d3.scale.category10();
+        var color = d3.scale.ordinal().range(["#16193B", "#35478C", "#F07F4A", "#697DD1", "#9AD6E3"]);
 
         var arc = d3.svg.arc()
             .outerRadius(outerRadius)

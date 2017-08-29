@@ -9,6 +9,19 @@
                 <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"streamgraph"</span><span class="nt">&gt;</span><span class="nt">&lt;/div</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;script</span><span class="nt">&gt;</span>
                     var data = [{}];
+                    $.ajax({
+                        type: 'get',
+                        dataType: 'json',
+                        //this API request will return the average value for each sensor for every month between the 2 dates
+                        url: "http://62.92.70.116:10010/sensorDataByDate?start_date=2016-05-06 15:57:23&end_date=2017-05-13 20:57:23&interval=MONTH",
+                        success: function(result) {
+                            data = result;
+                        },
+                        error: function(error) {
+
+                        }
+                    });
+                
                     margin = {
                         top: 20,
                         right: 20,

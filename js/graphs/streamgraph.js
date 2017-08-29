@@ -3,7 +3,7 @@ $(document).ready(function() {
         type: 'get',
         dataType: 'json',
         //this API request will return the average value for each sensor for every month between the 2 dates
-        url: "http://62.92.70.116:10010/sensorDataByDate?start_date=2016-05-07 15:57:23&end_date=2017-05-13%2015%3A57%3A23&interval=MONTH",
+        url: "http://62.92.70.116:10010/sensorDataByDate?start_date=2016-05-06 15:57:23&end_date=2017-05-10 20:57:23&interval=MONTH",
         success: function(result) {
             CreateD3StreamGraph(result);
         },
@@ -31,7 +31,7 @@ $(document).ready(function() {
 
         x = d3.time.scale().range([margin.left, width]);
 
-        y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.value; })]).range([height, 0]);      
+        y = d3.scale.linear().range([height, 0]);
 
         z = d3.scale.ordinal().range(colorrange);
 
