@@ -10,7 +10,6 @@ $(document).ready(function() {
             var dataFiltered = result.filter(function(d) {
                 return d.sensor == "LUM" || d.sensor == "MCP" || d.sensor == "HUMA";
             });
-
             CreateDonutChart(dataFiltered);
         },
         error: function(error) {

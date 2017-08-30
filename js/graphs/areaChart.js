@@ -65,9 +65,10 @@ $(document).ready(function() {
                 return y(d.value);
             });
 
-        var svg = d3.select("#areaNoise").append("svg")
+        var svg = d3.select("#areaNoise")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
+            .attr("align", "center")
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -132,9 +133,10 @@ $(document).ready(function() {
             .y0(height)
             .y1(function(d) { return y(d.value); });
 
-        var svg = d3.select("#areaLum").append("svg")
+        var svg = d3.select("#areaLum")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
+            .attr("align", "center")
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
