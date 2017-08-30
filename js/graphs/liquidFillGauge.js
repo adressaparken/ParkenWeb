@@ -4,30 +4,27 @@ $(document).ready(function() {
         type: 'get',
         dataType: 'json',
         //this is API request will return the average value per day of each sensor between the 2 dates - in this case its the same day so it will just return the everage for each sensor in that day
-        url: "http://62.92.70.116:10010/sensorDataByDate?start_date=2017-05-28%2000:00:00&end_date=2017-05-28%2015:23:59&interval=DAY",
+        url: "http://62.92.70.116:10010/v1/sensorDataByDate?start_date=2017-05-28%2000:00:00&end_date=2017-05-28%2015:23:59&interval=DAY",
         success: function(result) {
             var temp, hum, co2, tca, co, no2 = 0;
 
             //the code bellow will get the average value for that day for each sensor and create a chart for each of them
             result.forEach(function(element) {
-                if (element.sensor == "MCP"){
-                     temp = element.value;
-                     temLiquidFillGauge(temp);
-                }   
-                else if (element.sensor == "HUMA"){
+                if (element.sensor == "MCP") {
+                    temp = element.value;
+                    temLiquidFillGauge(temp);
+                } else if (element.sensor == "HUMA") {
                     hum = element.value;
                     humLiquidFillGauge(hum);
-                }
-                else if (element.sensor == "TCA"){
+                } else if (element.sensor == "TCA") {
                     tca = element.value;
                     tcaLiquidFillGauge(tca);
-                }
-                else if (element.sensor == "CO"){
+                } else if (element.sensor == "CO") {
                     co = element.value;
                     coLiquidFillGauge(co);
                 }
             }, this);
-            
+
         },
         error: function(error) {
             // in case of the API is down it will create the charts with the bellow values
@@ -38,7 +35,7 @@ $(document).ready(function() {
         }
     });
 
-    function temLiquidFillGauge(temp){
+    function temLiquidFillGauge(temp) {
         var gauge1 = loadLiquidFillGauge("fillgauge1", temp);
         var config1 = liquidFillGaugeDefaultSettings();
         config1.circleColor = "#FF7777";
@@ -50,7 +47,7 @@ $(document).ready(function() {
         config1.waveAnimateTime = 1000;
     }
 
-    function humLiquidFillGauge(hum){
+    function humLiquidFillGauge(hum) {
         var gauge2 = loadLiquidFillGauge("fillgauge2", hum);
         var config2 = liquidFillGaugeDefaultSettings();
         config2.circleColor = "#D4AB6A";
@@ -65,7 +62,7 @@ $(document).ready(function() {
         config2.waveCount = 1;
     }
 
-    function coLiquidFillGauge(co){
+    function coLiquidFillGauge(co) {
         var gauge5 = loadLiquidFillGauge("fillgauge5", co);
         var config5 = liquidFillGaugeDefaultSettings();
         config5.textVertPosition = 0.8;
@@ -77,7 +74,7 @@ $(document).ready(function() {
         config5.displayPercent = false;
     }
 
-    function tcaLiquidFillGauge(tca){
+    function tcaLiquidFillGauge(tca) {
         var gauge4 = loadLiquidFillGauge("fillgauge4", tca);
         var config4 = liquidFillGaugeDefaultSettings();
         config4.circleThickness = 0.15;
