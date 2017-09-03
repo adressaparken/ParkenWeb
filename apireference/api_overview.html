@@ -6,7 +6,6 @@
         <div class="cbp-l-member-name">Description</div>
         <div class="cbp-l-member-desc">
             <p><i class="fa fa-check-square" aria-hidden="true"></i> This API makes available data stored from multiple sensors (umidity, temperature, CO2, etc...) installed in a Park. </p>
-            <p><i class="fa fa-check-square" aria-hidden="true"></i> The API is designed to collect sensor data from the RPi as well as the machine status.</p>
         </div>
     </div>
     <div class="cbp-l-member-info" style="padding-top: 15px">
@@ -27,6 +26,87 @@
         <div class="cbp-l-member-desc">
             <p><i class="fa fa-check-square" aria-hidden="true"></i> The code is open source and its available for future development. </p>
             <p><i class="fa fa-check-square" aria-hidden="true"></i> In can be called from any browser or device (laptop, mobile, etc..). </p>
+        </div>
+    </div>
+    <div class="cbp-l-member-info" style="padding-top: 15px">
+        <div class="cbp-l-member-name">Sensors</div>
+        <div class="cbp-l-member-desc">
+            <p> The response format of this API is JSON as this is the current standard format used by most APIs. </p>
+            <p> The first generation (01.07.2015 - 01 September) contained 4 Libelium Waspmote devices with: </p>
+            <table class="table table-striped custab" style="width: auto !important;">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>TCA</td>
+                    <td>427 ABJ - Temperature Sensor</td>
+                </tr>
+                <tr>
+                    <td>CO2</td>
+                    <td>TGS4161 - CO2</td>
+                </tr>
+                <tr>
+                    <td>LUM</td>
+                    <td>Luminosity LDR Senso</td>
+                </tr>
+                <tr>
+                    <td>CO</td>
+                    <td>TGS2442 - CO</td>
+                </tr>
+                <tr>
+                    <td>MCP</td>
+                    <td>dBSPLA - Microphone</td>
+                </tr>
+                <tr>
+                    <td>HUMA</td>
+                    <td>540116511 - Humidity Sensor</td>
+                </tr>
+                <tr>
+                    <td>NO2</td>
+                    <td>2714 - NO2 Sensor</td>
+                </tr>
+                <tr>
+                    <td>AP2</td>
+                    <td>TGS2602 - Air Contaminants ( Gases: C6H5CH3, H2S, CH3CH2OH, NH3, H2)</td>
+                </tr>
+            </table>
+            <p>From the 1st of September it is installed a new array of sensors from Libelium Smart Cities. </p>
+            <p>This list is still preliminary and the exact call definition for the sensors will be determined after install.</p>
+            <table class="table table-striped custab" style="width: auto !important;">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Plug &amp; Sense! SCP WiFi</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9370-P</td>
+                    <td> Temperature, Humidity and Pressure Probe (ºC - %RH - Pa)</td>
+                </tr>
+                <tr>
+                    <td>NLS</td>
+                    <td>Noise Level Sensor (dBA)</td>
+                </tr>
+                <tr>
+                    <td>9372-P</td>
+                    <td>Carbon Dioxide Probe (ppm)</td>
+                </tr>
+                <tr>
+                    <td>9387-P</td>
+                    <td>Particle Matter (PM1 / PM2.5/ PM10) - Dust Probe (og/m3)</td>
+                </tr>
+                <tr>
+                    <td>9375-P</td>
+                    <td>Luminosity Probe (lux)</td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>
