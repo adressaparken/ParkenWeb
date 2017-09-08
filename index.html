@@ -79,60 +79,66 @@
         </section>
 
         <!-- Section: intro -->
-        <section id="dashboard" class="home-section paddingbot-20">
+        <section id="dashboard" class="home-section paddingbot-20" style="padding-top:0px">
             <div id="divDashboard" class="container">
-                <div class="col-lg-12">
-                    <div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
-                        <div class="section-heading text-center">
-                            <h2 class="h-bold">Real time data</h2>
-                            <!-- <p>Some description here about the graphics</p>-->
-                        </div>
-                        <div id="streamgraph">
-                            <!-- chart goes here! -->
+
+                <div class="col-sm-12 col-md-8">
+                    <div class="panel panel-card">
+                        <div class="panel-body">
+                            <div id="streamgraph" style="height:270px;"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-12 col-lg-6">
-                    <div class="col-lg-12">
-                        <div class="col-lg-4 center" style="padding: 0px; position: relative;">
-                            <svg id="fillgauge1" width="100%" height="100%"></svg>
-                        </div>
-                        <div class="col-lg-4 center" style="padding: 0px; position: relative;">
-                            <svg id="fillgauge2" width="100%" height="100%"></svg>
-                        </div>
-                        <div class="col-lg-4 center" style="padding: 0px; position: relative;">
-                            <svg id="areaNoise" width="100%" height="100%"></svg>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="col-lg-4 center" style="padding: 0px; position: relative;">
-                            <svg id="fillgauge4" width="100%" height="100%"></svg>
-                        </div>
-                        <div class="col-lg-4 center" style="padding: 0px; position: relative;">
-                            <svg id="fillgauge5" width="100%" height="100%"></svg>
-                        </div>
-                        <div class="col-lg-4 center" style="padding: 0px; position: relative;">
-                            <svg id="areaLum" width="100%" height="100%"></svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-6">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
-                        <div class="widget">
-                            <div id="donutChart" class="chart-container"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 well well-trans">
-                        <div class="wow fadeInRight animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
-                            <ul class="lead-list">
+                <div class="col-sm-12 col-md-4">
+                    <div class="panel panel-card">
+                        <div class="panel-body wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
+                            <ul class="lead-list" style="padding-top: 15px">
                                 <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Environmental Sensors</strong><br>Data from reliable sensors</span></li>
                                 <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Web Standards</strong><br>Simple REST API access</span></li>
                                 <li><span class="fa fa-check fa-1x icon-success"></span> <span class="list"><strong>Free to Use</strong><br>Open and free data usage</span></li>
                             </ul>
-                            <p class="text-right wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: bounceIn;">
+                            <p style="margin-bottom: 0px" class="text-right wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: bounceIn;">
                                 <a href="#parkenapi" class="btn btn-skin btn-lg">Parken API <i class="fa fa-angle-right"></i></a>
                             </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-8">
+                    <div class="panel panel-card">
+                        <div class="panel-body">
+                            <div class="col-lg-12" style="padding-top: 15px">
+                                <div class="col-lg-4 center" style="padding: 0px; position: relative;">
+                                    <svg id="fillgauge1" width="100%" height="100%"></svg>
+                                </div>
+                                <div class="col-lg-4 center" style="padding: 0px; position: relative;">
+                                    <svg id="fillgauge2" width="100%" height="100%"></svg>
+                                </div>
+                                <div class="col-lg-4 center" style="padding: 0px; position: relative;">
+                                    <svg id="areaNoise" width="100%" height="100%"></svg>
+                                </div>
+                            </div>
+                            <div class="col-lg-12" style="padding-top: 10px">
+                                <div class="col-lg-4 center" style="padding: 0px; position: relative;">
+                                    <svg id="fillgauge4" width="100%" height="100%"></svg>
+                                </div>
+                                <div class="col-lg-4 center" style="padding: 0px; position: relative;">
+                                    <svg id="fillgauge5" width="100%" height="100%"></svg>
+                                </div>
+                                <div class="col-lg-4 center" style="padding: 0px; position: relative;">
+                                    <svg id="areaLum" width="100%" height="100%"></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12 col-md-4">
+                    <div class="panel panel-card">
+                        <div class="panel-body wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
+                            <div id="donutChart" style="height:335px;"></div>
                         </div>
                     </div>
                 </div>
