@@ -14,7 +14,7 @@ $(document).ready(function() {
         },
         error: function(error) {
             //in case of error calling API the chart will be using the bellow jason example that is a sample of the API result
-            var dataFiltered = [{ "sensor": "TCA", "date": "2017-05-27T23:00:00.000Z", "value": 96.6 }, { "sensor": "MCP", "date": "2017-05-27T23:00:00.000Z", "value": 50 }, { "sensor": "LUM", "date": "2017-05-27T23:00:00.000Z", "value": 103.14 }, { "sensor": "HUMA", "date": "2017-05-27T23:00:00.000Z", "value": 63.72 }];
+            var dataFiltered = [{ "sensor": "MCP", "date": "2017-05-27T23:00:00.000Z", "value": 50 }, { "sensor": "LUM", "date": "2017-05-27T23:00:00.000Z", "value": 103.14 }, { "sensor": "HUMA", "date": "2017-05-27T23:00:00.000Z", "value": 63.72 }];
             generate(dataFiltered, "#donutChart");
         }
     });
