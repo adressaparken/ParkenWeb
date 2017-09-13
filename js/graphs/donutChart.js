@@ -20,7 +20,7 @@ $(document).ready(function() {
     });
 
     function generate(data, id) {
-        debugger;
+
         var category = ['LUM', 'MCP', 'HUMA'],
             cateColor = ["#0068b7", "#00b7ee", "#a5d4f3"];
 
