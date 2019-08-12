@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-12 bootstrap-demo">
         <caption class="text-left"><strong>Request example using pagination</strong></caption>
-        <pre style="margin-top: 15px"><p style="margin-bottom:0px">GET https://api.adressaparken.hackheim.no/sensorDataList?<strong>sensor</strong>=CO2&<strong>limit</strong>=10&<strong>offset</strong>=0</p></pre>
+        <pre style="margin-top: 15px"><p style="margin-bottom:0px">GET http://parken.perseum.com:10010/v1/sensorDataList?sensor=tc&limit=100&offset=0</p></pre>
         <p> Pagination is useful when handling big amount of data or, in general, to make data easier to handle.</p>
         <p> This API method returns the latest number of results (limit) withing a certain offset.</p>
         <p> If the limit=100 and offset=0, the API returns the last 100 results. Changing the offset=1 it will bring the next 100 results and so on.</p>
@@ -54,7 +54,7 @@
 <div class="row">
     <div class="col-md-12 bootstrap-demo">
         <caption class="text-left"><strong>Request example by dates</strong></caption>
-        <pre style="margin-top: 15px"><p style="margin-bottom:0px;">GET https://api.adressaparken.hackheim.no/v1/sensorDataByDate?start_date=2016-12-07%2015:57:23&end_date=2017-05-13%2015:57:23&interval=MONTH</p></pre>
+        <pre style="margin-top: 15px"><p style="margin-bottom:0px;">GET http://parken.perseum.com:10010/v1/sensorDataByDate?start_date=2016-12-07%2015:57:23&end_date=2017-05-13%2015:57:23&interval=MONTH</p></pre>
         <p> This API method returns results between two dates. Results are grouped by a specified interval (YEAR, MONTH, WEEK, DAY, HOUR).</p>
         <p> This API call can also include a sensor field.</p>
     </div>
