@@ -3,7 +3,7 @@ $(document).ready(function() {
     $.ajax({
         type: 'get',
         dataType: 'json',
-        url: "http://parken.perseum.com:10010/v1/sensorDataList?sensor=NO2&limit=100&offset=0", //this is the API url request to get the last 100 results for NO2 sensor
+        url: "https://parken.perseum.com/api/v1/sensorDataList?sensor=NO2&limit=100&offset=0", //this is the API url request to get the last 100 results for NO2 sensor
         success: function(result) {
             CreateAreChart(result, "#areaNoise", "Noise");
         },
@@ -18,7 +18,7 @@ $(document).ready(function() {
     $.ajax({
         type: 'get',
         dataType: 'json',
-        url: "http://parken.perseum.com:10010/v1/sensorDataList?sensor=LUM&limit=100&offset=0", //this is the API url request to get the last 100 results for LUM sensor
+        url: "https://parken.perseum.com/api/v1/sensorDataList?sensor=LUM&limit=100&offset=0", //this is the API url request to get the last 100 results for LUM sensor
         success: function(result) {
             CreateLumAreChart(result, "#areaLum", "Lum");
         },
