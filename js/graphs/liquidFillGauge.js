@@ -4,7 +4,7 @@ $(document).ready(function() {
         type: 'get',
         dataType: 'json',
         //this is API request will return the average value per day of each sensor between the 2 dates - in this case its the same day so it will just return the everage for each sensor in that day
-        url: "https://parken.perseum.com/api/v1/sensorDataByDate?start_date=2017-05-28%2000:00:00&end_date=2017-05-28%2015:23:59&interval=DAY",
+        url: "https://adressaparken.hackheim.no/api/v1/sensorDataByDate?start_date=2017-05-28%2000:00:00&end_date=2017-05-28%2015:23:59&interval=DAY",
         success: function(result) {
             var temp, hum, co2, tca, co, no2 = 0;
 
